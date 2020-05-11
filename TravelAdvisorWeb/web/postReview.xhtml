@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Post Review</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p>
+                Enter Attraction Name: <br></br>
+                <h:inputText id="name" required="true" value="#{login.theLoginAccount.attr_name}"></h:inputText>
+            </p>
+             <p>
+                Give this Attraction a Score between 0 and 5: <br></br>
+                <h:inputText id="score" required="true" value="#{login.theLoginAccount.score}"></h:inputText>
+            </p>
+            <p>
+                Any Comments? <br></br>
+                <h:inputText id="comment" required="true" value="#{login.theLoginAccount.comment}"></h:inputText>
+            </p>
+            
+            <h:commandButton id="submit" value="Submit" action="#{login.theLoginAccount.postReview()}"></h:commandButton>
+        </h:form>
+    </h:body>
+</html>
+

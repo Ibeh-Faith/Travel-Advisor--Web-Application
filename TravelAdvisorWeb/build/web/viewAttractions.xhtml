@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core">
+    
+    <title>View Attraction</title>
+    <body>
+         <h:form>
+             
+             <p><b>Attraction Name: </b>&nbsp; #{login.theLoginAccount.viewAtt.name}</p>  
+           
+            
+             <p><b>Attraction City:</b> &nbsp;  #{login.theLoginAccount.viewAtt.city}</p>
+            
+             <p><b>Attraction State:</b> &nbsp; #{login.theLoginAccount.viewAtt.state}</p>
+             <p><b>Attraction Description:</b> &nbsp; #{login.theLoginAccount.viewAtt.description}</p>
+             <p><b>Attraction Name:</b> &nbsp; #{login.theLoginAccount.viewAtt.tag}</p>
+             <p><b>Attraction Name:</b> &nbsp; #{login.theLoginAccount.viewAtt.avgScore}</p>
+             
+              
+                 
+            <h:dataTable id="busSysCritt" 
+                          rows ="#{login.theLoginAccount.att_na.size()}" 
+                          value="#{login.theLoginAccount.att_na}" var="strr">  
+                <h:column>  
+                    <f:facet name="header">Attraction name</f:facet>
+        <h:outputText styleClass="dataTableOutputText" 
+                      id="strvalueaa" value="#{strr.attr_name}"/>  
+                </h:column>  
+                 &nbsp; &nbsp; &nbsp; &nbsp;
+                 <h:column>  
+                     <f:facet name="header">User</f:facet>
+        <h:outputText styleClass="dataTableOutputText" 
+                      id="strvalueuu" value="#{strr.user_id}"/>  
+                </h:column> 
+                  &nbsp; &nbsp; &nbsp; &nbsp;
+                 <h:column>  
+                     <f:facet name="header">Comment</f:facet>
+        <h:outputText styleClass="dataTableOutputText" 
+                      id="strvaluecc" value="#{strr.comment}"/>  
+                </h:column> 
+                   &nbsp; &nbsp; &nbsp; &nbsp;
+                 <h:column>  
+                     <f:facet name="header">Score</f:facet>
+        <h:outputText styleClass="dataTableOutputText" 
+                      id="strvaluess" value="#{strr.score}"/>  
+                </h:column> 
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                 <h:column>  
+                     <f:facet name="header">Date</f:facet>
+        <h:outputText styleClass="dataTableOutputText" 
+                      id="strvaluedd" value="#{strr.date}"/>  
+                </h:column>  
+            </h:dataTable>  
+            
+                 
+            
+            
+            <br></br>
+            <br></br>
+            <br></br>
+             <h:commandButton id="fav" value="Add to my Favorite Destination" immediate="true"
+                              action="#{login.theLoginAccount.favfview()}" />
+             &nbsp;&nbsp;
+             <h:commandButton id="rev" value="Post Review" immediate="true"
+                              action="reviewFromView.xhtml" />
+             &nbsp;&nbsp;
+            <h:commandButton id="return" value="Return" immediate="true"
+                                     action="welcome.xhtml" />
+        </h:form>
+    </body>
+</html>
+

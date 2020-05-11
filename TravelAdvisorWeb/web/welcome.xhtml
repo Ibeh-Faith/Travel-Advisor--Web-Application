@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Login OK</title>
+    </head>
+    <body>
+        <div><p>Welcome, #{login.theLoginAccount.user_id}</p></div>
+        <h:form>
+            <h3>You May Like</h3> 
+            <h:dataTable id="busSysCrit" 
+                         rows ="#{login.theLoginAccount.viewYouMayLike().size()}" border="1"
+                         value="#{login.theLoginAccount.viewYouMayLike()}" var="atr" style="border-collapse: collapse">  
+                <h:column> 
+                    <f:facet name="header">Name</f:facet>
+        <h:outputText styleClass="dataTableOutputText" 
+                      id="strvalue" value="#{atr.name}"/>  
+                </h:column>  
+                <h:column>  
+                    <f:facet name="header">Tag</f:facet>
+        <h:outputText styleClass="dataTableOutputText" 
+                      id="strvalue1" value="#{atr.tag}"/>  
+                </h:column> 
+                <h:column>  
+                    <f:facet name="header">Average Score</f:facet>
+        <h:outputText styleClass="dataTableOutputText" 
+                      id="strvalue2" value="#{atr.avgScore}"/>  
+                </h:column> 
+                <h:column>
+                    <h:commandButton id="viewatr" value="View Attraction" 
+                                     action="#{login.theLoginAccount.displayAttraction(atr.name)}" />
+                </h:column>
+                
+            </h:dataTable>  
+            
+        </h:form>
+        <br></br>
+        <br></br>
+        <br></br>
+        <h:form> 
+            
+            
+            <p>
+                 
+               <h:commandButton id="ResetPassword" value="Reset Password"  
+                                 action="resetPassword.xhtml" />  
+               &nbsp;&nbsp;
+               <h:commandButton id="createAttraction" value="Create Attraction"  
+                                 action="createAttraction.xhtml" />  
+               &nbsp;&nbsp;
+               <h:commandButton id="searchCityAttraction" value="Search Attraction Based on City"  
+                                 action="searchCityAttraction.xhtml" />  
+               &nbsp;&nbsp;
+               <h:commandButton id="searchTagAttraction" value="Search Attraction Based on Tags"  
+                                 action="searchTagAttraction.xhtml" />  
+               &nbsp;&nbsp;
+               <h:commandButton id="postReview" value="Post a Review"  
+                                 action="postReview.xhtml" />  
+               &nbsp;&nbsp;
+               <h:commandButton id="favorite" value="Go to My Favorite Destinations"  
+                                 action="favoriteDestination.xhtml" />  
+               &nbsp;&nbsp;
+               <h:commandButton id="addFavorite" value="Add Attraction to My Favorite Destinations"  
+                                 action="addFavorite.xhtml" />  
+               &nbsp;&nbsp;
+               <h:commandButton id="SignOut" value="Sign Out"  
+                                action="#{login.theLoginAccount.signOut()}" />    
+            </p>
+        </h:form>
+    </body>
+</html>
+

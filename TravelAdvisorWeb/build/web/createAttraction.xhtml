@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   
+    <head>
+        <title>Create Attraction</title>
+    </head>
+    <body>
+        <h:form>
+            <div><h2>Create Attraction</h2></div>
+        
+<!--           <p>Please enter your new user ID:<br></br>
+                <h:inputText id="user_id" required ="true" 
+                             requiredMessage="The ID field cannot be empty"
+                        title="Please enter your ID"
+                        value="#{registration.user_id}"
+                        validatorMessage="The length of your selected 
+                        ID must be between 3 and 20.">
+                    <f:validateLength maximum="20" minimum="3" />
+                </h:inputText>
+            </p>
+        
+        -->
+<!--        <p>Please enter your user id:<br></br>
+                <h:inputText id="user_id" required ="true" 
+                             requiredMessage="The user_id field cannot be empty"
+                        title="Please enter the user_ide"
+                        value="#{login.theLoginAccount.user_id}">
+                </h:inputText>
+            </p>-->
+<div><p>#{login.theLoginAccount.user_id}</p></div>
+        <p>Please enter the Attraction Name:<br></br>
+                <h:inputText id="name" required ="true" 
+                             requiredMessage="The name field cannot be empty"
+                        title="Please enter the AttractionName"
+                        value="#{login.theLoginAccount.attr_name}">
+                </h:inputText>
+            </p>
+             <p>What City is the Attraction Located:<br></br>
+                <h:inputText id="city" required ="true" 
+                             requiredMessage="The city field cannot be empty"
+                        title="Please enter the Attraction City"
+                        value="#{login.theLoginAccount.attr_city}">
+                </h:inputText>
+            </p>
+            <p>What State is the Attraction Located:<br></br>
+                <h:inputText id="state" required ="true" 
+                             requiredMessage="The city field cannot be empty"
+                        title="Please enter the Attraction State"
+                        value="#{login.theLoginAccount.attr_state}">
+                </h:inputText>
+            </p>
+            <p>Describe the Attraction:<br></br>
+                <h:inputText id="desc" required ="true" 
+                             requiredMessage="The description field cannot be empty"
+                        title="Please enter the Attraction Description"
+                        value="#{login.theLoginAccount.attr_description}">
+                </h:inputText>
+            </p>
+        
+        <p>What tag does it belong to?:<br></br>
+            <h:selectOneMenu id="tag1" required="true" value="#{login.theLoginAccount.attr_tag}">
+                <f:selectItem itemValue="History Buff" itemLabel="History Buff"/>
+                <f:selectItem itemValue="Shopping Fanatic" itemLabel="Shopping Fanatic"/>
+                <f:selectItem itemValue="Beach Goer" itemLabel="Beach Goer"/>
+                <f:selectItem itemValue="Urban Explorer" itemLabel="Urban Explorer"/>
+                <f:selectItem itemValue="Nature Lover" itemLabel="Nature Lover"/>
+                <f:selectItem itemValue="Family Vacationer" itemLabel="Family Vacationer"/>
+            </h:selectOneMenu>
+        </p>
+         
+         <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{login.theLoginAccount.createAttraction()}" />
+            </p>
+          </h:form>
+    </body>
+</html>
+

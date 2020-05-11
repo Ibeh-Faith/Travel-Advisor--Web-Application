@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Search City Attraction</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p>Enter the city you want to search for: <br></br>
+              <h:inputText id="searchcity" required="true" title="Enter the name of city"
+                           value="#{login.theLoginAccount.attr_city}"></h:inputText>
+                           </p>
+            <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="searchCity2.xhtml" />
+            </p>
+        </h:form>
+      
+       
+    </h:body>
+</html>
+
